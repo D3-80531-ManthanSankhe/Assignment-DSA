@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Tester {
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the size of employee :");
+		int size = sc.nextInt();
+		Employee emp[]=new Employee[size];
+		for(int i=0;i<emp.length;i++) {
+			System.out.println("Enter the id,name,salary");
+			emp[i] = new Employee(sc.nextInt(),sc.next(),sc.nextDouble());
+		}
+
+	}
+
+}

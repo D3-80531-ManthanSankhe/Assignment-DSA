@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class Tester {
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the size of employee :");
+		int size = sc.nextInt();
+		Employee emp[]=new Employee[size];
+
+	}
+
+}

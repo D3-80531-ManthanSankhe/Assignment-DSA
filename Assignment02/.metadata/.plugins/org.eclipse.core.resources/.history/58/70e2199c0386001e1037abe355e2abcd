@@ -1,0 +1,30 @@
+
+public class Desc {
+	private int size;
+	private int arr[];
+	private int top;
+	
+	public Desc(int size) {
+		this.size = size;
+		top=-1;
+		arr = new int[size];
+	}
+	public boolean isFull() {
+		return top == size-1;
+	}
+	public boolean isEmpty() {
+		return top==-1;
+	}
+	public static void push() {
+		if() {
+			
+		}
+		else {
+			
+		}
+		
+	}
+	
+	
+
+}
