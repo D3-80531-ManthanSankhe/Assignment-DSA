@@ -1,0 +1,64 @@
+
+public class SortedLinkedList {
+    static class Node {
+        int data;
+        Node next;
+
+        public Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    Node head;
+
+    public SortedLinkedList() {
+        this.head = null;
+    }
+
+    // Function to insert a value in sorted order
+    public void insertSorted(int value) {
+        Node newNode = new Node(value);
+
+        // If the list is empty or the new node's value is less than the head's value
+        if (head == null || value < head.data) {
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+
+        // Traverse the list to find the correct position to insert the new node
+        Node current = head;
+        while (current.next != null && current.next.data < value) {
+            current = current.next;
+        }
+
+        // Insert the new node at the correct position
+        newNode.next = current.next;
+        current.next = newNode;
+    }
+
+    // Function to display the linked list
+    public void display() {
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        SortedLinkedList list = new SortedLinkedList();
+
+        // Insert values in sorted order
+        list.insertSorted(5);
+        list.insertSorted(2);
+        list.insertSorted(8);
+        list.insertSorted(1);
+
+        // Display the linked list
+        System.out.println("Sorted Linked List:");
+        list.display();
+    }
+}

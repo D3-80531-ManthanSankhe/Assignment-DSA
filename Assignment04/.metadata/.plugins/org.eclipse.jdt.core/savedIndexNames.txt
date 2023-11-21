@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+/home/manthan/Documents/DAC_sept23/DSA/dsa prac/Assignment04/.metadata/.plugins/org.eclipse.jdt.core
+1865797976.index
+2150333264.index
+1847925372.index
+1766383205.index
+4146875334.index

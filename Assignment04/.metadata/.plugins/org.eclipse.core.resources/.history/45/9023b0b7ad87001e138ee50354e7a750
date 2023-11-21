@@ -1,0 +1,31 @@
+
+public class SortedOrder {
+	
+	public class Node{
+		private int  data;
+		private Node next;
+		
+		public Node(int num) {
+			data = num;
+			next = null;
+		}
+	}
+	
+	private Node head;
+	
+	public SortedOrder() {
+		head = null;
+	}
+	
+	public boolean isEmpty() {
+		return head == null;
+	}
+	
+	public void display() {
+		if(isEmpty())
+			return;
+		
+	}
+
+
+}

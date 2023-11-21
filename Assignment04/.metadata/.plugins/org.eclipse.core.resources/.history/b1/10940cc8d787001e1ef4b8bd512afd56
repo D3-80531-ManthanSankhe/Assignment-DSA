@@ -1,0 +1,68 @@
+class Node {
+    int data;
+    Node next;
+
+    public Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class CircularLinkedList {
+    private Node tail;
+
+    public CircularLinkedList() {
+        this.tail = null;
+    }
+
+
+    public void addLast(int data) {
+        Node newNode = new Node(data);
+        if (tail == null) {
+            tail = newNode;
+            tail.next = tail; 
+        } else {
+            newNode.next = tail.next;
+            tail.next = newNode;
+            tail = newNode;
+        }
+    }
+
+    public void delFirst() {
+        if (tail != null) {
+            if (tail.next == tail) {
+                tail = null;
+            } else {
+                tail.next = tail.next.next;
+            }
+        }
+    }
+
+        public void display() {
+        if (tail != null) {
+            Node current = tail.next;
+            do {
+                System.out.print(current.data + " ");
+                current = current.next;
+            } while (current != tail.next);
+            System.out.println();
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        CircularLinkedList circularLinkedList = new CircularLinkedList();
+
+        circularLinkedList.addLast(1);
+        circularLinkedList.addLast(2);
+        circularLinkedList.addLast(3);
+
+        System.out.println("Initial List:");
+        circularLinkedList.display();
+
+        circularLinkedList.delFirst();
+        System.out.println("After deleting first element:");
+        circularLinkedList.display();
+    }
+}
