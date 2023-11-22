@@ -1,0 +1,60 @@
+class TreeNode {
+    int data;
+    TreeNode left;
+    TreeNode right;
+
+    public TreeNode(int data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+public class BinarySearchTree {
+    private TreeNode root;
+
+    public BinarySearchTree() {
+        this.root = null;
+    }
+
+    // Public method to perform a search operation in the BST
+    public boolean search(int target) {
+        return searchRecursive(root, target);
+    }
+
+    // Private recursive method to perform a search operation in the BST
+    private boolean searchRecursive(TreeNode current, int target) {
+        // Base case: if the current node is null, the target is not in the BST
+        if (current == null) {
+            return false;
+        }
+
+        // Recursive cases: compare the target with the current node's data
+        if (target == current.data) {
+            return true; // Found the target
+        } else if (target < current.data) {
+            return searchRecursive(current.left, target); // Search in the left subtree
+        } else {
+            return searchRecursive(current.right, target); // Search in the right subtree
+        }
+    }
+
+    // Other methods of the BST (insertion, traversal, etc.) can be added here
+}
+
+public class BSTExample {
+    public static void main(String[] args) {
+        BinarySearchTree bst = new BinarySearchTree();
+
+        // Adding nodes to the BST
+        bst.addNode(10);
+        bst.addNode(5);
+        bst.addNode(15);
+        bst.addNode(3);
+        bst.addNode(7);
+
+        // Perform search operations on the BST
+        System.out.println("Is 7 in the BST? " + bst.search(7));
+        System.out.println("Is 12 in the BST? " + bst.search(12));
+    }
+}

@@ -1,0 +1,52 @@
+
+public class DoublyCircularLinkedList {
+	static class Node{
+		private int data;
+		private Node next;
+		private Node prev;
+		
+		public Node(int value) {
+			int data = value;
+			prev = next = null;
+		}
+	}
+	private Node head;
+	
+	public DoublyCircularLinkedList() {
+		head = null;
+	}
+		public boolean isEmpty() {
+			return head == null;
+		}
+		
+		public void addPosition(int value,int pos) {
+			Node nn = new Node(value);
+			if(pos == 1 && head==null) {
+				head = nn;
+				nn.next=nn;
+				nn.prev  = nn;
+			}
+			else {
+				Node trav = head;
+			for(int i=1; i<pos-1;i++ ) {
+				trav = trav.next;
+			}
+			nn.prev = trav;
+			nn.next = trav.next;
+			trav.next = nn;
+			trav.next.prev = nn;
+			}
+		}
+		public void deletePosition(int value,int pos) {
+			Node nn = new Node(value);
+			if(pos == 1 && head==null) {
+				System.out.println("List is Empty");
+			}
+			else {
+				
+			}
+		}
+		
+	
+
+}

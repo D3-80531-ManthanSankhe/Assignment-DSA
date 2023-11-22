@@ -1,0 +1,26 @@
+import java.util.List;
+
+public class Tester {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		link l = new link();
+		
+		
+		l.addFirst(40);
+		l.addFirst(30);
+		l.addFirst(20);
+		l.addFirst(10);
+		
+		
+		l.addPosition(3, 1);
+		l.addPosition(5,2);
+		l.addPosition(2, 3);
+		l.addPosition(7, 4);
+		l.addPosition(4, 1);
+		
+		l.display();
+
+	}
+
+}

@@ -1,0 +1,28 @@
+
+public class DoublyCircularLinkedList {
+	static class Node{
+		private int data;
+		private Node next;
+		private Node prev;
+		
+		public Node(int value) {
+			int data = value;
+			prev = next = null;
+		}
+	}
+	private Node head;
+	
+	public DoublyCircularLinkedList() {
+		head = null;
+	}
+		public boolean isEmpty() {
+			return head == null;
+		}
+		
+		public void addPosition(int value,int pos) {
+			
+		}
+		
+	
+
+}

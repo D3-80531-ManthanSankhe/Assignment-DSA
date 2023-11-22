@@ -1,0 +1,67 @@
+
+public class link {
+	static class Node{
+		private int data;
+		private Node next;
+		private Node prev;
+		
+		public Node(int value) {
+			int data = value;
+			prev = next = null;
+		}
+	}
+	private Node head;
+	
+	public link() {
+		head = null;
+	}
+		public boolean isEmpty() {
+			return head == null;
+		}
+		
+		public void addPosition(int value,int pos) {
+			Node nn = new Node(value);
+			if(pos == 1 && head==null) {
+				head = nn;
+				nn.next=nn;
+				nn.prev  = nn;
+			}
+			else {
+				Node trav = head;
+			for(int i=1; i<pos-1;i++ ) 
+				trav = trav.next;
+			nn.prev = trav;
+			nn.next = trav.next;
+			trav.next = nn;
+			trav.next.prev = nn;
+			}
+		}
+		public void deletePosition(int value,int pos) {
+			Node nn = new Node(value);
+			
+			if(head==null) {
+				System.out.println("List is Empty");
+			}
+			else if(head.next == null) {
+				head = null;
+			}
+			else {
+				Node trav = head;
+				for(int i=1;i<pos;i++) 
+					trav = trav.next;
+				trav.prev.next =trav.next;
+				trav.next.prev=trav.prev;
+			}
+			
+		}
+		public  void display() {
+			Node trav = head;
+			while(trav.next != head ) {
+				System.out.println(" "+trav.data);
+				trav = trav.next;
+			}
+		}
+		
+	
+
+}

@@ -1,0 +1,49 @@
+public class BST {
+    private TreeNode root;
+
+    public BST() {
+        this.root = null;
+    }
+
+    // Public method to add a node to the BST
+    public void addNode(int data) {
+        root = addNodeRecursive(root, data);
+    }
+
+    // Private recursive method to add a node to the BST
+    private TreeNode addNodeRecursive(TreeNode current, int data) {
+        // Base case: if the current node is null, create a new node
+        if (current == null) {
+            return new TreeNode(data);
+        }
+
+        // Recursive cases: navigate to the left or right subtree based on the data
+        if (data < current.data) {
+            current.left = addNodeRecursive(current.left, data);
+        } else if (data > current.data) {
+            current.right = addNodeRecursive(current.right, data);
+        }
+
+        // Return the updated node
+        return current;
+    }
+
+    // Other methods of the BST (traversal, searching, etc.) can be added here
+
+
+
+
+    public static void main(String[] args) {
+        BST bst = new BST();
+
+        // Adding nodes to the BST
+        bst.addNode(10);
+        bst.addNode(5);
+        bst.addNode(15);
+        bst.addNode(3);
+        bst.addNode(7);
+
+        // Perform operations on the BST as needed
+        // ...
+    }
+}
